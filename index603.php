@@ -27,7 +27,7 @@ if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
 
 <p style="color:red;"><?= $error; ?></p>
 <html><body>
-<form method="post" action="index603.php">
+<form method="post" action="/Task603/index603.php">
     <p>Введите "логин" <input type="text" name="login"></p>
     <p>Введите "пароль" <input type="password" name="pass" ></p>
     <p><input type="submit" value="Login"></p>
