@@ -16,34 +16,24 @@ function auth($login, $pass)
 
 function calculate($a, $b, $operation)
 {
+    $result = '';
     switch ($operation) {
         case '+':
             $result = $a + $b;
-            $srt1 = "$a  $operation  $b = $result";
-            echo $srt1;
-            file_put_contents('data/data603.txt', $srt1 . PHP_EOL, FILE_APPEND);
             break;
         case '-':
             $result = $a - $b;
-            $srt2 = "$a  $operation  $b = $result";
-            echo $srt2;
-            file_put_contents('data/data603.txt', $srt2 . PHP_EOL, FILE_APPEND);
             break;
         case '*':
             $result = $a * $b;
-            $srt3 = "$a  $operation  $b = $result";
-            echo $srt3;
-            file_put_contents('data/data603.txt', $srt3 . PHP_EOL, FILE_APPEND);
             break;
         case '/':
-            if ($b == 0) {
-                echo 'Ошибка!Деление на 0!';
-            } else {
+            if ($b != 0) {
                 $result = $a / $b;
-                $srt4 = "$a  $operation  $b = $result";
-                echo $srt4;
-                file_put_contents('data/data603.txt', $srt4 . PHP_EOL, FILE_APPEND);
             }
             break;
     }
+
+    file_put_contents('C:OSPanel/domains/php/Task603/data/data603.txt', "$a  $operation  $b = $result" . PHP_EOL, FILE_APPEND);
+    return $result;
 }
